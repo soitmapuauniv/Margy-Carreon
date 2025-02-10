@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPUTER SCIENCE STUDENT PORTFOLIO</title>
+    <title>Computer Science Student Portfolio</title>
     <style>
         /* Import Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
@@ -19,11 +19,52 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
             color: #333;
+            display: flex;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .sidebar ul li {
+            padding: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            transition: background 0.3s;
+            padding: 10px;
+        }
+
+        .sidebar ul li a:hover {
+            background: #444;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 220px; /* Adjusted for sidebar */
+            padding: 40px;
+            width: calc(100% - 220px);
         }
 
         /* Header (Hero Section) */
         .hero {
-            position: relative;
             background: url('https://virtual-bg.com/wp-content/uploads/2020/06/peppa-pig.png') no-repeat center center/cover;
             height: 100vh;
             display: flex;
@@ -32,6 +73,7 @@
             text-align: center;
             color: white;
             padding: 20px;
+            position: relative;
         }
 
         .hero::before {
@@ -52,38 +94,11 @@
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 600;
-            margin-bottom: 10px;
         }
 
         .hero p {
             font-size: 1.5rem;
             font-weight: 300;
-        }
-
-        /* Navigation */
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.3);
         }
 
         /* Sections */
@@ -132,16 +147,6 @@
             background: #0056b3;
         }
 
-        /* Contact */
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
         /* Footer */
         footer {
             text-align: center;
@@ -153,60 +158,73 @@
     </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>COMPUTER SCIENCE <br> STUDENT PORTFOLIO</h1>
-            <p>Welcome to my e-portfolio!</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University. <br> <br>
-Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning. <br><br>
-Hence, this portfolio acts as a collection of a student's academic progress.<br>
-</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Experimental Research</h3>
-            <p>Description of project 1.</p>
-            <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of project 2.</p>
-            <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
         <ul>
-            <li>ML Player</li>
-            <li>Mukbang</li>
-            <li>Kumon</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#student-outcomes">Student Outcomes</a></li>
         </ul>
-    </section>
+    </nav>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Facebook: <a href="https://www.facebook.com/jp.ferrer.311" target="_blank">JP Ferrer</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></p>
-    </section>
+    <!-- Main Content -->
+    <div class="main-content">
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <h1>Computer Science <br> Student Portfolio</h1>
+                <p>Welcome to my e-portfolio!</p>
+            </div>
+        </header>
 
-    <footer>
-        <p>&copy; 2024 JP Ferrer. All rights reserved.</p>
-    </footer>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I love Hotdog</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Experimental Research</h3>
+                <p>Description of project 1.</p>
+                <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Project Title 2</h3>
+                <p>Description of project 2.</p>
+                <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>ML Player</li>
+                <li>Mukbang</li>
+                <li>Kumon</li>
+            </ul>
+        </section>
+
+        <section id="activities">
+            <h2>Activities</h2>
+            <p>List of activities here...</p>
+        </section>
+
+        <section id="student-outcomes">
+            <h2>Student Outcomes</h2>
+            <p>Information about student outcomes...</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Facebook: <a href="https://www.facebook.com/jp.ferrer.311" target="_blank">JP Ferrer</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 JP Ferrer. All rights reserved.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
