@@ -3,49 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Header</title>
-    <style>
-        /* Import Google Font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero {
-            background: url('https://virtual-bg.com/wp-content/uploads/2020/06/peppa-pig.png') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff; /* Text color */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow */
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-    </style>
+    <title>JP BENEDICT D. FERRER</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="hero">
-        <h1><p></p>Computer Science <br> Student Portfolio </p></h1>
-        <p>Your tagline or description goes here</p>
+        <div class="hero-content">
+            <h1>JP Ferrer</h1>
+            <p>Welcome to my e-portfolio!</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I love Hotdog</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Experimental Research</h3>
+            <p>Description of project 1.</p>
+            <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Project Title 2</h3>
+            <p>Description of project 2.</p>
+            <a href="https://link-to-your-project.com" target="_blank" class="btn">View Project</a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>ML Player</li>
+            <li>Mukbang</li>
+            <li>Kumon</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Facebook: <a href="https://www.facebook.com/jp.ferrer.311" target="_blank">JP Ferrer</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your LinkedIn Profile</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 JP Ferrer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
