@@ -4,7 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styled Header</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero {
+            background: url('background.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff; /* Text color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow */
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    </style>
 </head>
 <body>
     <header class="hero">
@@ -13,34 +49,3 @@
     </header>
 </body>
 </html>
-/* Import a Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-.hero {
-    background: url('background.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff; /* Text color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow */
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 600;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
