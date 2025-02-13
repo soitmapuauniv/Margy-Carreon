@@ -36,7 +36,6 @@
         }
 
         .sidebar ul li {
-            position: relative;
             margin: 15px 0;
         }
 
@@ -52,34 +51,6 @@
 
         .sidebar ul li a:hover {
             background: #444;
-        }
-
-       
-        .dropdown {
-            display: none;
-            position: absolute;
-            left: 100%;
-            top: 0;
-            background: #444;
-            width: 200px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown a {
-            display: block;
-            padding: 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            text-align: left;
-        }
-
-        .dropdown a:hover {
-            background: #555;
-        }
-
-        .has-dropdown:hover .dropdown {
-            display: block;
         }
 
         .main-content {
@@ -139,6 +110,40 @@
             font-size: 2rem;
             margin-bottom: 15px;
         }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .box {
+            width: 30%;
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .box h2 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+        }
+
+        .box p {
+            font-size: 1rem;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -148,15 +153,14 @@
             <li><a onclick="loadContent('home')">Home</a></li>
             <li><a onclick="loadContent('activities')">Activities</a></li>
             <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
-            <li class="has-dropdown">
-                <a href="#">Graduate Attributes &#9662;</a>
-                <ul class="dropdown">
-                    <li><a href="attribute1.html">Leadership</a></li>
-                    <li><a href="attribute2.html">Teamwork</a></li>
-                    <li><a href="attribute3.html">Problem-Solving</a></li>
-                    <li><a href="attribute4.html">Ethics & Responsibility</a></li>
-                </ul>
-            </li>
+            <li class="dropdown">
+    <a onclick="toggleDropdown()">Graduate Attributes ▼</a>
+    <ul class="dropdown-menu">
+        <li><a href="graduate-attribute1.html">Attribute 1</a></li>
+        <li><a href="graduate-attribute2.html">Attribute 2</a></li>
+        <li><a href="graduate-attribute3.html">Attribute 3</a></li>
+    </ul>
+</li>
         </ul>
     </nav>
 
@@ -184,8 +188,142 @@
             if (page === 'home') {
                 content.innerHTML = `
                     <section>
-                        <h2>ABOUT ME</h2>
-                        <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.</p>
+                        <p style="font-size:30px"><b>ABOUT ME</b><br></p>
+                        <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.<br><br>
+                        Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning.<br><br>
+                        Hence, this portfolio acts as a collection of a student's academic progress.<br><br><br></p>
+
+                        <style>
+                        div {background-color: #faf0e6;}
+                        </style>
+                        <img src="https://philnews.ph/wp-content/uploads/2019/11/catriona-gray.jpg" width="250" height="350" style="float: left; margin-right: 20px;">
+                        <div style="font-size:30px"><b>PROFILE</b> <br></div>
+                        <div>Full Name: Catriona Elisa Magnayon Gray <br><br>
+                        Email Address: cemgray@mymail.mapua.edu.ph <br><br>
+                        Degree Program: Bachelor of Science in Information Systems <br><br>
+                        School: Mapua University <br><br><br><br><br><br><br></div>
+
+                        <br><p style="font-size:30px"><b>ACHIEVEMENTS</b><br></p>
+                        <div class="container">
+                            <div class="box">
+                                <img src="https://akns-images.eonline.com/eol_images/Entire_Site/20181116/rs_634x1024-181216192115-634-catriona-gray-miss-universe-winner-me-121618.jpg?fit=around%7C634:1024&output-quality=90&crop=634:1024;center,top" alt="Image 1">
+                                <h2>Miss Universe 2018 </h2>
+                                <p>Catriona was crowned Miss Universe 2018 in Bangkok, Thailand. <br><br>
+                                She has beaten over 80 delegates from different countries.</p>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://techcrunch.com/wp-content/uploads/2015/07/hackathon.png" alt="Image 2">
+                                <h2>TechCrunch Hackathon</h2>
+                                <p>Catriona placed 2nd runner-up in TechCrunch Hackathon on IoT, held at British Virgin Islands in 2020.<br><br>
+                                Their project entitled, </p>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://ieomsociety.org/ieom/wp-content/uploads/2012/07/ieomsocietybannernew900.png" alt="Image 3">
+                                <h2>IEOM Conference</h2>
+                                <p>Won Best Paper Presentation for "ERP Solutions for the FinTech Landscape in the Philippines"</p>
+                            </div>
+                        </div>
+
+                        <br><p style="font-size:30px"><b>STRENGTHS</b><br></p>
+                        <div class="container">
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/910px-SAP_2011_logo.svg.png" alt="Image 1">
+                                <h2>SAP </h2>
+                                <p>Proficiency: Expert</p>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/SAS_logo_horiz.svg/440px-SAS_logo_horiz.svg.png" alt="Image 2">
+                                <h2>SAS</h2>
+                                <p>Proficiency: Beginner</p>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1422px-PHP-logo.svg.png?20180502235434" alt="Image 3">
+                                <h2>PHP</h2>
+                                <p>Proficiency: Advance</p>
+                            </div>
+                        </div>
+
+                        
+
+                        <br><p style="font-size:30px"><b>GOALS</b><br></p>
+                        <div class="container">
+
+                                <div class="box">
+                                <h2>MS Information Systems</h2>
+                                <p>Further studies in Information Systems at a reputable university.</p>
+                            </div>
+
+                            <div class="box">
+                                <h2>Fortune 500</h2>
+                                <p>Join a Fortune 500 company to hone my knowledge and skillset on Information Systems.</p>
+                            </div>
+
+                            <div class="box">
+                                <h2>Chief Information Officer</h2>
+                                <p>Long term goal in an organization where I can apply my expertise in EA, ERP & Management.</p>
+                            </div>
+                        </div>
+                        
+
+
+                        <br><p style="font-size:30px"><b>CONTACT</b><br></p>
+                        <div class="container">
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Image 1">
+                                <h2>Facebook </h2>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png?20220518162235" alt="Image 2">
+                                <h2>Instagram</h2>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1024px-Logo_of_Twitter.svg.png?20220821125553" alt="Image 2">
+                                <h2>Twitter</h2>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/144px-LinkedIn_icon.svg.png?20210220164014" alt="Image 2">
+                                <h2>LinkedIn</h2>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Image 2">
+                                <h2>GitHub</h2>
+                            </div>
+
+                            <div class="box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1024px-Stack_Overflow_icon.svg.png?20190716190036" alt="Image 3">
+                                <h2>Stack Overflow</h2><br>
+                            </div>
+                        </div>
+                        <br>
+                        <style>
+                    footer {
+                    text-align: center;
+                    padding: 15px;
+                    background-color: orange;
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: bold; }
+                    
+                    footer a {
+                    color: white;
+                    text-decoration: none;}
+                    
+                    footer a:hover {
+                    text-decoration: underline;}
+                    </style>
+
+                    <footer>
+                    <p>Get in touch at <br>
+                    <a href="https://www.mapua.edu.ph" target="_blank">www.mapua.edu.ph</a></p>
+                    </footer>
                     </section>
                 `;
             } 
@@ -204,9 +342,18 @@
                         <p>...</p>
                     </section>
                 `;
+            } 
+            else if (page === 'graduate-attributes') {
+                content.innerHTML = `
+                    <section>
+                        <h2>Graduate Attributes</h2>
+                        <p>...</p>
+                    </section>
+                `;
             }
         }
     </script>
 
 </body>
 </html>
+
