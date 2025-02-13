@@ -1,214 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-Portfolio</title>
-  <script src="https://kit.fontawesome.com/042f0b2a62.js" crossorigin="anonymous"></script>
-	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	<link rel="stylesheet" href="Eduardo Porfolio /.css">
-	 
-    <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-		  <a class="navbar-brand" href="#"<a class="navbar-brand" href="#"><strong>JP Benedict Ferrer</strong></a>
-		  </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About Us
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about us.html">About Us</a></li>
-                <li><a class="dropdown-item" href="./Bell-schedule.html">Bell Schedule</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Projects
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><a class="dropdown-item" href="#">Addition to list</a></li>
-              </ul>
-            </li>
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Student Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Resume
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><a class="dropdown-item" href="#">Addition to list</a></li>
-              </ul>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf0e6;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 220px;
+            height: 100vh;
+            background: #333;
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .sidebar ul li a:hover {
+            background: #444;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #444;
+            text-align: center;
+            padding: 0;
+            margin-top: 5px;
+        }
+
+        .dropdown li {
+            margin: 0;
+        }
+
+        .dropdown li a {
+            font-size: 0.9rem;  /* Smaller font size */
+            padding: 6px 10px;  /* Adjusted padding */
+            display: block;
+        }
+
+        .sidebar ul li:hover .dropdown {
+            display: block;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            padding: 40px;
+            width: calc(100% - 220px);
+        }
+
+        .hero {
+            background: url('https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ojIU84VO1XMGIn6_.jpg') no-repeat center center/cover;
+            height: 35vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            border-bottom: 5px solid orange;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            background: none;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <ul>
+            <li><a onclick="loadContent('home')">Home</a></li>
+            <li><a onclick="loadContent('activities')">Activities</a></li>
+            <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
+            <li>
+                <a>Graduate Attributes ▼</a>
+                <ul class="dropdown">
+                    <li><a onclick="loadContent('knowledge')">Knowledge for Solving Computer Problems</a></li>
+                    <li><a onclick="loadContent('problem-analysis')">Problem Analysis</a></li>
+                    <li><a onclick="loadContent('design')">Design/Development of Solutions</a></li>
+                    <li><a onclick="loadContent('modern-tools')">Modern Tool Usage</a></li>
+                    <li><a onclick="loadContent('computing')">Computing</a></li>
+                    <li><a onclick="loadContent('professionalism')">Professionalism and Ethics</a></li>
+                    <li><a onclick="loadContent('teamwork')">Individual and Teamwork</a></li>
+                    <li><a onclick="loadContent('communication')">Communication</a></li>
+                    <li><a onclick="loadContent('lifelong-learning')">Lifelong Learning</a></li>
+                </ul>
             </li>
-                 </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+        </ul>
     </nav>
-  </header>
 
-
-	  
-	  <main>
-<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item">
-		
-         <img src="IMG_0631-2-280x210 (1).jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>ITHS Gym.</h1>
-          
-          </div>
+    <div class="main-content">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My Portfolio</h1>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item active">
-        <img src="https://c4.wallpaperflare.com/wallpaper/445/528/31/split-view-trees-technology-machine-wallpaper-preview.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>ITHS</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-          </div>
-        </div>
-      </div>
-		
-		<div class="main-container">
-		<div></div>	
-		
-		</div>
-      <div class="carousel-item">
-        <img class="https://www.topuniversities.com/sites/default/files/styles/736x304/public/guides/lead-bg-images/file%20-%202024-07-23T150458.046.jpg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-    
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-      </div>
-      <div class="col-md-5">
-        <title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect>
-      </div>
+        <section id="content-section">
+            <h2>Home</h2>
+            <p>Welcome to my portfolio website.</p>
+        </section>
     </div>
 
-    <hr class="featurette-divider">
+    <script>
+        function loadContent(section) {
+            const contentSection = document.getElementById("content-section");
 
-    <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
+            let content = "";
 
-    <hr class="featurette-divider">
+            switch(section) {
+                case 'home':
+                    content = "<h2>Home</h2><p>Welcome to my portfolio website.</p>";
+                    break;
+                case 'activities':
+                    content = "<h2>Activities</h2><p>Here are some of the projects and activities I have worked on.</p>";
+                    break;
+                case 'student-outcomes':
+                    content = "<h2>Student Outcomes</h2><p>Explore the outcomes that define my academic journey.</p>";
+                    break;
+                case 'knowledge':
+                    content = "<h2>Knowledge for Solving Computer Problems</h2><p>Applying computing fundamentals to solve complex problems.</p>";
+                    break;
+                case 'problem-analysis':
+                    content = "<h2>Problem Analysis</h2><p>Identifying and formulating computational solutions.</p>";
+                    break;
+                case 'design':
+                    content = "<h2>Design/Development of Solutions</h2><p>Developing innovative and effective software solutions.</p>";
+                    break;
+                case 'modern-tools':
+                    content = "<h2>Modern Tool Usage</h2><p>Utilizing contemporary tools for efficient computing.</p>";
+                    break;
+                case 'computing':
+                    content = "<h2>Computing</h2><p>Understanding the principles of computing and programming.</p>";
+                    break;
+                case 'professionalism':
+                    content = "<h2>Professionalism and Ethics</h2><p>Emphasizing ethical responsibility in computing practices.</p>";
+                    break;
+                case 'teamwork':
+                    content = "<h2>Individual and Teamwork</h2><p>Collaborating effectively in diverse professional environments.</p>";
+                    break;
+                case 'communication':
+                    content = "<h2>Communication</h2><p>Enhancing verbal and written communication in technical contexts.</p>";
+                    break;
+                case 'lifelong-learning':
+                    content = "<h2>Lifelong Learning</h2><p>Committing to continuous professional development.</p>";
+                    break;
+                default:
+                    content = "<h2>Home</h2><p>Welcome to my portfolio website.</p>";
+            }
 
-    <div class="row featurette">
-      <div class="col-md-7">
-       
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
+            contentSection.innerHTML = content;
+        }
+    </script>
 
-  
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
-
-  <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
-     
-        
-
-    <!-- START THE FEATURETTES -->
-
-    
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div><!-- /.container -->
-
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>© 2017–2024 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
-  </footer>
-</main>
-	  
-	  
-	  
-	  <main></main>
-    
-	 <footer class="py-3 my-4">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About us</a></li>
-    </ul>
-    <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
-  </footer>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
