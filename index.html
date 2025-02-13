@@ -108,6 +108,7 @@
             font-size: 2rem;
             margin-bottom: 15px;
         }
+        
     </style>
 </head>
 <body>
@@ -134,6 +135,7 @@
                 <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University. <br><br>
                     Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning. <br><br>
                     Hence, this portfolio acts as a collection of a student's academic progress.<br></p>
+                
             </section>
         </div>
     </div>
@@ -149,8 +151,17 @@
                 <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University. <br><br>
                     Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning. <br><br>
                     Hence, this portfolio acts as a collection of a student's academic progress.<br></p>
+                    <style>
+                    img {
+                        float: right;
+                    }
+                    
+                </style>
+                <p><img src="w3css.gif" width="100" height="140">
+                ...</p>
                     </section>
-                `;
+            
+                ;
             } 
             else if (page === 'activities') {
                 content.innerHTML = `
@@ -158,7 +169,7 @@
                         <h2>Extracurricular Activities</h2>
                         <p>...</p>
                     </section>
-                `;
+                ;
             } 
             else if (page === 'student-outcomes') {
                 content.innerHTML = `
@@ -166,7 +177,7 @@
                         <h2>Student Outcomes</h2>
                         <p>...</p>
                     </section>
-                `;
+                ;
             } 
             else if (page === 'graduate-attributes') {
                 content.innerHTML = `
@@ -174,7 +185,7 @@
                         <h2>Graduate Attributes</h2>
                         <p>...</p>
                     </section>
-                `;
+                ;
             }
         }
     </script>
