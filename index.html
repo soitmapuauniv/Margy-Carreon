@@ -149,18 +149,27 @@
 <body>
 
    
-    <nav>
-        <a href="#" onclick="showSection('home')">Home</a>
-        <div class="dropdown">
-            <a href="#">Categories ▼</a>
-            <div class="dropdown-content">
-                <a onclick="showSection('category1')">Category 1</a>
-                <a onclick="showSection('category2')">Category 2</a>
-                <a onclick="showSection('category3')">Category 3</a>
-            </div>
-        </div>
+    <nav class="sidebar">
+        <ul>
+            <li><a onclick="loadContent('home')">Home</a></li>
+            <li><a onclick="loadContent('activities')">Activities</a></li>
+            <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
+            <li>
+                <a>Graduate Attributes ▼</a>
+                <ul class="dropdown">
+                    <li><a onclick="loadContent('knowledge')">Knowledge for Solving Computer Problems</a></li>
+                    <li><a onclick="loadContent('problem-analysis')">Problem Analysis</a></li>
+                    <li><a onclick="loadContent('design')">Design/Development of Solutions</a></li>
+                    <li><a onclick="loadContent('modern-tools')">Modern Tool Usage</a></li>
+                    <li><a onclick="loadContent('computing')">Computing</a></li>
+                    <li><a onclick="loadContent('professionalism')">Professionalism and Ethics</a></li>
+                    <li><a onclick="loadContent('teamwork')">Individual and Teamwork</a></li>
+                    <li><a onclick="loadContent('communication')">Communication</a></li>
+                    <li><a onclick="loadContent('lifelong-learning')">Lifelong Learning</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
-
     <div class="container">
         <div id="home" class="content-section active">
             <h1>Welcome to the Page</h1>
