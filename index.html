@@ -153,22 +153,19 @@
             <li><a onclick="loadContent('home')">Home</a></li>
             <li><a onclick="loadContent('activities')">Activities</a></li>
             <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
-            <div class="dropdown">
-                <button class="dropbtn">Dropdown</button>
-                <div class="dropdown-content">
-                <li><a onclick="loadContent('knowledge')">Knowledge for Solving Computer Problems</a></li>
-                    <li><a onclick="loadContent('problem-analysis')">Problem Analysis</a></li>
-                    <li><a onclick="loadContent('design')">Design/Development of Solutions</a></li>
-                    <li><a onclick="loadContent('modern-tools')">Modern Tool Usage</a></li>
-                    <li><a onclick="loadContent('computing')">Computing</a></li>
-                    <li><a onclick="loadContent('professionalism')">Professionalism and Ethics</a></li>
-                    <li><a onclick="loadContent('teamwork')">Individual and Teamwork</a></li>
-                    <li><a onclick="loadContent('communication')">Communication</a></li>
-                    <li><a onclick="loadContent('lifelong-learning')">Lifelong Learning</a></li>
-                </div>
-            </div>
-                
-                </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Graduate Attributes
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="Knowledge for Solving Computer Problems.html">Knowledge for Solving Computer Problems</a></li>
+                <li><a class="dropdown-item" href="Problem Analysis.html">Problem Analysis</a></li>
+                <li><a class="dropdown-item" href="Design Development of Solutions.html">Design/Development of Solutions</a></li>
+                <li><a class="dropdown-item" href="Modern Tool Usage.html">Modern Tool Usage</a></li>
+                 <li><a class="dropdown-item" href="Computing Professionalism and Ethics.html">Computing Professionalism and Ethics</a></li>
+                  <li><a class="dropdown-item" href="Individual and Teamwork.html">Individual and Teamwork</a></li>
+                  <li><a class="dropdown-item" href="Communication.html">Communication</a></li>
+                  <li><a class="dropdown-item" href="Lifelong Learning.html">Lifelong Learning</a></li>
               </ul>
             </li>
         </ul>
@@ -353,7 +350,7 @@
                     </section>
                 `;
             } 
-            else if (page === 'knowledge') {
+            else if (page === 'graduate-attributes') {
                 content.innerHTML = `
                     <section>
                         <h2>Graduate Attributes</h2>
@@ -363,7 +360,6 @@
             }
         }
     </script>
-        
 
 </body>
 </html>
