@@ -37,12 +37,13 @@
 
         .sidebar ul li {
             margin: 15px 0;
+            position: relative;
         }
 
         .sidebar ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 0.75rem;
             display: block;
             padding: 10px;
             transition: background 0.3s;
@@ -51,6 +52,32 @@
 
         .sidebar ul li a:hover {
             background: #444;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #444;
+            text-align: center;
+            padding: 0;
+            margin-top: 5px;
+        }
+
+        .dropdown li {
+            margin: 0;
+        }
+
+        .dropdown li a {
+            font-size: 0.9rem;  /* Smaller font size */
+            padding: 6px 10px;  /* Adjusted padding */
+            display: block;
+        }
+
+        .sidebar ul li:hover .dropdown {
+            display: block;
         }
 
         .main-content {
@@ -97,52 +124,9 @@
             text-align: center;
         }
 
-        section:nth-child(even) {
-            background: #000000;
-            color: white;
-        }
-
-        section:nth-child(odd) {
-            background: #f5e1c8;
-        }
-
         h2 {
             font-size: 2rem;
             margin-bottom: 15px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .box {
-            width: 30%;
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-        }
-
-        .box img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .box h2 {
-            margin: 15px 0;
-            font-size: 1.5rem;
-        }
-
-        .box p {
-            font-size: 1rem;
-            color: #555;
         }
     </style>
 </head>
@@ -153,48 +137,44 @@
             <li><a onclick="loadContent('home')">Home</a></li>
             <li><a onclick="loadContent('activities')">Activities</a></li>
             <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Graduate Attributes
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Knowledge for Solving Computer Problems.html">Knowledge for Solving Computer Problems</a></li>
-                <li><a class="dropdown-item" href="Problem Analysis.html">Problem Analysis</a></li>
-                <li><a class="dropdown-item" href="Design Development of Solutions.html">Design/Development of Solutions</a></li>
-                <li><a class="dropdown-item" href="Modern Tool Usage.html">Modern Tool Usage</a></li>
-                 <li><a class="dropdown-item" href="Computing Professionalism and Ethics.html">Computing Professionalism and Ethics</a></li>
-                  <li><a class="dropdown-item" href="Individual and Teamwork.html">Individual and Teamwork</a></li>
-                  <li><a class="dropdown-item" href="Communication.html">Communication</a></li>
-                  <li><a class="dropdown-item" href="Lifelong Learning.html">Lifelong Learning</a></li>
-              </ul>
+            <li>
+                <a>Graduate Attributes ▼</a>
+                <ul class="dropdown">
+                    <li><a onclick="loadContent('knowledge')">Knowledge for Solving Computer Problems</a></li>
+                    <li><a onclick="loadContent('problem-analysis')">Problem Analysis</a></li>
+                    <li><a onclick="loadContent('design')">Design/Development of Solutions</a></li>
+                    <li><a onclick="loadContent('modern-tools')">Modern Tool Usage</a></li>
+                    <li><a onclick="loadContent('computing')">Computing</a></li>
+                    <li><a onclick="loadContent('professionalism')">Professionalism and Ethics</a></li>
+                    <li><a onclick="loadContent('teamwork')">Individual and Teamwork</a></li>
+                    <li><a onclick="loadContent('communication')">Communication</a></li>
+                    <li><a onclick="loadContent('lifelong-learning')">Lifelong Learning</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
 
     <div class="main-content">
-        <header class="hero">
+        <div class="hero">
             <div class="hero-content">
-                <h1>Computer Science <br> Student Portfolio</h1>
+                <h1>Welcome to My Portfolio</h1>
             </div>
-        </header>
-
-        <div id="content">
-            <section>
-                <h2><b>ABOUT ME</b></h2>
-                <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University. <br><br>
-                    Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning. <br><br>
-                    Hence, this portfolio acts as a collection of a student's academic progress.<br></p>
-            </section>
         </div>
+        <section id="content-section">
+            <h2>Home</h2>
+            <p>Welcome to my portfolio website.</p>
+        </section>
     </div>
 
     <script>
-        function loadContent(page) {
-            let content = document.getElementById('content');
+        function loadContent(section) {
+            const contentSection = document.getElementById("content-section");
 
-            if (page === 'home') {
-                content.innerHTML = `
-                    <section>
+            let content = "";
+
+            switch(section) {
+                case 'home':
+                    content = `
                         <p style="font-size:30px"><b>ABOUT ME</b><br></p>
                         <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.<br><br>
                         Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning.<br><br>
@@ -331,36 +311,27 @@
                     <p>Get in touch at <br>
                     <a href="https://www.mapua.edu.ph" target="_blank">www.mapua.edu.ph</a></p>
                     </footer>
-                    </section>
-                `;
-            } 
-            else if (page === 'activities') {
-                content.innerHTML = `
-                    <section>
-                        <h2>Extracurricular Activities</h2>
-                        <p>...</p>
-                    </section>
-                `;
-            } 
-            else if (page === 'student-outcomes') {
-                content.innerHTML = `
-                    <section>
-                        <h2>Student Outcomes</h2>
-                        <p>...</p>
-                    </section>
-                `;
-            } 
-            else if (page === 'graduate-attributes') {
-                content.innerHTML = `
-                    <section>
-                        <h2>Graduate Attributes</h2>
-                        <p>...</p>
-                    </section>
-                `;
+                    `;
+                    break;
+                case 'activities':
+                    content = "<h2>Activities</h2><p>Here are some of the projects and activities I have worked on.</p>";
+                    break;
+                case 'student-outcomes':
+                    content = "<h2>Student Outcomes</h2><p>Explore the outcomes that define my academic journey.</p>";
+                    break;
+                case 'knowledge':
+                    content = "<h2>Knowledge for Solving Computer Problems</h2><p>Applying computing fundamentals to solve complex problems.</p>";
+                    break;
+                case 'problem-analysis':
+                    content = "<h2>Problem Analysis</h2><p>Identifying and formulating computational solutions.</p>";
+                    break;
+                default:
+                    content = "<h2>Home</h2><p>Welcome to my portfolio website.</p>";
             }
+
+            contentSection.innerHTML = content;
         }
     </script>
 
 </body>
 </html>
-
