@@ -352,8 +352,7 @@
                         <br>
 
                         <p style="font-size:30px"><b>COURSERA CERTIFICATES</b><br></p>
-                        <!DOCTYPE html>
-
+                        
     <style>
         * {
             box-sizing: border-box;
@@ -365,49 +364,57 @@
         .container {
             display: flex;
             justify-content: space-between;
-            gap: 20px; 
+            gap: 20px;
             padding: 20px;
         }
 
         .document {
-            width: 33%; 
+            width: 33%;
             text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
         }
 
         .document iframe {
             width: 100%;
             height: 300px;
-            border: 1px solid #ccc;
-        }
-
-        .document p {
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px 0;
+            border: none;
         }
     </style>
-</head>
-<body>
 
-    <div class="container">
-        <div class="document">
-            <p>IT131-8L</p>
-            <p>(Project Document)</p>
-            <iframe src="https://docs.google.com/document/d/13MiAc47wNJqrv-8WdcanBjMNd5TnJDouyMkJUa6n1gc/edit"></iframe>
-        </div>
-
-        <div class="document">
-            <p>IT132-8L</p>
-            <p>(Research Paper)</p>
-            <iframe src="https://docs.google.com/document/d/13MiAc47wNJqrv-8WdcanBjMNd5TnJDouyMkJUa6n1gc/edit"></iframe>
-        </div>
-
-        <div class="document">
-            <p>IT133-8L</p>
-            <p>(Case Study)</p>
-            <iframe src="https://docs.google.com/document/d/13MiAc47wNJqrv-8WdcanBjMNd5TnJDouyMkJUa6n1gc/edit"></iframe>
-        </div>
+<div class="container">
+    <div class="document">
+        <div class="title">IT131-8L</div>
+        <div class="subtitle">Project Document 1</div>
+        <iframe src="https://drive.google.com/file/d/1TodjsB3rhY01uFXxsu01UbNBcdfM78kh/preview"></iframe>
     </div>
+
+    <div class="document">
+        <div class="title">IT132-9L</div>
+        <div class="subtitle">Project Document 2</div>
+        <iframe src="https://drive.google.com/file/d/1TodjsB3rhY01uFXxsu01UbNBcdfM78kh/preview"></iframe>
+    </div>
+
+    <div class="document">
+        <div class="title">IT133-7L</div>
+        <div class="subtitle">Project Document 3</div>
+        <iframe src="https://drive.google.com/file/d/1TodjsB3rhY01uFXxsu01UbNBcdfM78kh/preview"></iframe>
+    </div>
+</div>
+
 
                     </section>
                 `;
