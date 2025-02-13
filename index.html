@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>   
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS Student Portfolio</title>
@@ -10,7 +9,6 @@
 
         * {
             margin: 0;
-        
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
@@ -48,6 +46,7 @@
             display: block;
             padding: 10px;
             transition: background 0.3s;
+            cursor: pointer;
         }
 
         .sidebar ul li a:hover {
@@ -60,7 +59,6 @@
             width: calc(100% - 240px);
         }
 
-    
         .hero {
             background: url('https://miro.medium.com/v2/resize:fit:1400/format:webp/0*ojIU84VO1XMGIn6_.jpg') no-repeat center center/cover;
             height: 35vh;
@@ -91,7 +89,6 @@
             font-weight: 600;
         }
 
-
         section {
             padding: 60px 20px;
             max-width: 900px;
@@ -111,45 +108,16 @@
             font-size: 2rem;
             margin-bottom: 15px;
         }
-
-        .profile-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .profile-container img {
-            width: 150px;
-            height: 150px;
-            
-        }
-
-        .project {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            text-align: left;
-        }
-
-        .project img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
 
     <nav class="sidebar">
         <ul>
-            <li><a href="#about">Home</a></li>
-            <li><a href="#profile">Activities</a></li>
-            <li><a href="#student-outcomes">Student Outcomes</a></li>
-            <li><a href="#student-outcomes">Graduate Attributes</a></li>
+            <li><a onclick="loadContent('home')">Home</a></li>
+            <li><a onclick="loadContent('activities')">Activities</a></li>
+            <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
+            <li><a onclick="loadContent('graduate-attributes')">Graduate Attributes</a></li>
         </ul>
     </nav>
 
@@ -160,56 +128,53 @@
             </div>
         </header>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.<br> 
-Learning is a complex phenomenon, either vertical or horizontal advancement can be well represented by a student's learning. <br>
-Hence, this portfolio acts as a collection of a student's academic progress.<br></p>
-        </section>
-
-        <section id="profile">
-            <h2>Profile</h2>
-            <div class="profile-container">
-                <img src="https://lh6.googleusercontent.com/-y3WtAx7ck55VN3KwCi0J5kK9MMGQyZopIm44saeeLxhrL5zkiMQuZX5YH-U1D7pxMdbCeMgNYVpowBlJECNqUi944YEjpNNp0XjHSw20jj_WW3l4nwCDmQ32zjoiqrb2A=w1280" alt="Profile Image width="600" height="900">
-                <p>
-                    <strong>Full Name:</strong> Catriona Elisa Magnayon Gray <br><br>
-                    <strong>Email:</strong> cemgray@mymail.mapua.edu.ph <br><br>
-                    <strong>Degree:</strong> Bachelor of Science in Information Systems <br><br>
-                    <strong>School:</strong> Mapua University
-                </p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <p>Programming, Web Development, Data Analysis, UI/UX Design, and more...</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <img src="https://via.placeholder.com/800x200" alt="Project Image">
-                <h3>Project 1</h3>
-                <p>A brief description of the project.</p>
-            </div>
-            <div class="project">
-                <img src="https://via.placeholder.com/800x200" alt="Project Image">
-                <h3>Project 2</h3>
-                <p>A brief description of the project.</p>
-            </div>
-        </section>
-
-        <section id="activities">
-            <h2>Activities</h2>
-            <p>List of extracurricular activities, competitions, and hackathons...</p>
-        </section>
-
-        <section id="student-outcomes">
-            <h2>Student Outcomes</h2>
-            <b>Student Outcome 1 </b> <br><br>
-<p>An ability to analyze a complex computing problem and to apply principles of computing and other relevant disciplines to identify solutions.<br></p>
-        </section>
+        <div id="content">
+            <!-- Default Home Content -->
+            <section>
+                <h2>About Me</h2>
+                <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.</p>
+            </section>
+        </div>
     </div>
+
+    <script>
+        function loadContent(page) {
+            let content = document.getElementById('content');
+
+            if (page === 'home') {
+                content.innerHTML = `
+                    <section>
+                        <h2>About Me</h2>
+                        <p>This portfolio displays the conceptual, aesthetic, and creative development of Computer Science students from Mapua University.</p>
+                    </section>
+                `;
+            } 
+            else if (page === 'activities') {
+                content.innerHTML = `
+                    <section>
+                        <h2>Extracurricular Activities</h2>
+                        <p>List of competitions, hackathons, student organizations...</p>
+                    </section>
+                `;
+            } 
+            else if (page === 'student-outcomes') {
+                content.innerHTML = `
+                    <section>
+                        <h2>Student Outcomes</h2>
+                        <p>An ability to analyze a complex computing problem and apply principles of computing to identify solutions.</p>
+                    </section>
+                `;
+            } 
+            else if (page === 'graduate-attributes') {
+                content.innerHTML = `
+                    <section>
+                        <h2>Graduate Attributes</h2>
+                        <p>Demonstrating professionalism, ethics, and responsibility in computing practice.</p>
+                    </section>
+                `;
+            }
+        }
+    </script>
 
 </body>
 </html>
