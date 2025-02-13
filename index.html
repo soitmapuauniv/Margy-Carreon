@@ -148,11 +148,9 @@
 </head>
 <body>
 
-    <nav class="sidebar">
-        <ul>
-            <li><a onclick="loadContent('home')">Home</a></li>
-            <li><a onclick="loadContent('activities')">Activities</a></li>
-            <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
+   
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
         <div class="dropdown">
             <a href="#">Categories ▼</a>
             <div class="dropdown-content">
@@ -161,9 +159,14 @@
                 <a onclick="showSection('category3')">Category 3</a>
             </div>
         </div>
-    
+    </nav>
 
     <div class="container">
+        <div id="home" class="content-section active">
+            <h1>Welcome to the Page</h1>
+            <p>Select a category from the dropdown to view content.</p>
+        </div>
+
         <div id="category1" class="content-section">
             <h1>Category 1</h1>
             <p>This is the content for Category 1.</p>
@@ -189,11 +192,10 @@
         }
     </script>
 
+</body>
+</html>
 
-            
-        </ul>
-    </nav>
-
+    
     <div class="main-content">
         <header class="hero">
             <div class="hero-content">
