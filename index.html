@@ -31,6 +31,7 @@
             padding: 10px 15px;
             text-align: center;
             transition: background 0.3s;
+            cursor: pointer;
         }
 
         .sidebar a:hover {
@@ -53,6 +54,7 @@
         .dropdown-content a {
             font-size: 0.9rem;
             padding: 8px;
+            cursor: pointer;
         }
 
         .main-content {
@@ -74,9 +76,9 @@
 <body>
 
     <div class="sidebar">
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('activities')">Activities</a>
-        <a href="#" onclick="showSection('student-outcomes')">Student Outcomes</a>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('activities')">Activities</a>
+        <a onclick="showSection('student-outcomes')">Student Outcomes</a>
         <div class="dropdown">
             <a href="#">Categories ▼</a>
             <div class="dropdown-content">
@@ -89,18 +91,18 @@
 
     <div class="main-content">
         <div id="home" class="content-section active">
-            <h1>Welcome to the Page</h1>
+            <h1>Welcome to the Home Page</h1>
             <p>Select a category from the dropdown to view content.</p>
         </div>
 
-        <div id="activities" class="content-section active">
-            <h1>Welcome to the Page</h1>
-            <p>Select a category from the dropdown to view content.</p>
+        <div id="activities" class="content-section">
+            <h1>Activities</h1>
+            <p>This is the content for Activities.</p>
         </div>
 
-        <div id="student-outcomes" class="content-section active">
-            <h1>Welcome to the Page</h1>
-            <p>Select a category from the dropdown to view content.</p>
+        <div id="student-outcomes" class="content-section">
+            <h1>Student Outcomes</h1>
+            <p>This is the content for Student Outcomes.</p>
         </div>
 
         <div id="category1" class="content-section">
