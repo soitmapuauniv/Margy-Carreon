@@ -153,21 +153,44 @@
             <li><a onclick="loadContent('home')">Home</a></li>
             <li><a onclick="loadContent('activities')">Activities</a></li>
             <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Graduate Attributes
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Knowledge for Solving Computer Problems.html">Knowledge for Solving Computer Problems</a></li>
-                <li><a class="dropdown-item" href="Problem Analysis.html">Problem Analysis</a></li>
-                <li><a class="dropdown-item" href="Design Development of Solutions.html">Design/Development of Solutions</a></li>
-                <li><a class="dropdown-item" href="Modern Tool Usage.html">Modern Tool Usage</a></li>
-                 <li><a class="dropdown-item" href="Computing Professionalism and Ethics.html">Computing Professionalism and Ethics</a></li>
-                  <li><a class="dropdown-item" href="Individual and Teamwork.html">Individual and Teamwork</a></li>
-                  <li><a class="dropdown-item" href="Communication.html">Communication</a></li>
-                  <li><a class="dropdown-item" href="Lifelong Learning.html">Lifelong Learning</a></li>
-              </ul>
-            </li>
+        <div class="dropdown">
+            <a href="#">Categories ▼</a>
+            <div class="dropdown-content">
+                <a onclick="showSection('category1')">Category 1</a>
+                <a onclick="showSection('category2')">Category 2</a>
+                <a onclick="showSection('category3')">Category 3</a>
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <div id="category1" class="content-section">
+            <h1>Category 1</h1>
+            <p>This is the content for Category 1.</p>
+        </div>
+
+        <div id="category2" class="content-section">
+            <h1>Category 2</h1>
+            <p>This is the content for Category 2.</p>
+        </div>
+
+        <div id="category3" class="content-section">
+            <h1>Category 3</h1>
+            <p>This is the content for Category 3.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            let sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+
+            
         </ul>
     </nav>
 
