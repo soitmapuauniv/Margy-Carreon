@@ -42,7 +42,7 @@
         .sidebar ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 0.75rem;
             display: block;
             padding: 10px;
             transition: background 0.3s;
@@ -153,19 +153,19 @@
             <li><a onclick="loadContent('home')">Home</a></li>
             <li><a onclick="loadContent('activities')">Activities</a></li>
             <li><a onclick="loadContent('student-outcomes')">Student Outcomes</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Graduate Attributes
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Knowledge for Solving Computer Problems.html">Knowledge for Solving Computer Problems</a></li>
-                <li><a class="dropdown-item" href="Problem Analysis.html">Problem Analysis</a></li>
-                <li><a class="dropdown-item" href="Design Development of Solutions.html">Design/Development of Solutions</a></li>
-                <li><a class="dropdown-item" href="Modern Tool Usage.html">Modern Tool Usage</a></li>
-                 <li><a class="dropdown-item" href="Computing Professionalism and Ethics.html">Computing Professionalism and Ethics</a></li>
-                  <li><a class="dropdown-item" href="Individual and Teamwork.html">Individual and Teamwork</a></li>
-                  <li><a class="dropdown-item" href="Communication.html">Communication</a></li>
-                  <li><a class="dropdown-item" href="Lifelong Learning.html">Lifelong Learning</a></li>
+                        <li>
+                <a>Graduate Attributes ▼</a>
+                <ul class="dropdown">
+                    <li><a onclick="loadContent('knowledge')">Knowledge for Solving Computer Problems</a></li>
+                    <li><a onclick="loadContent('problem-analysis')">Problem Analysis</a></li>
+                    <li><a onclick="loadContent('design')">Design/Development of Solutions</a></li>
+                    <li><a onclick="loadContent('modern-tools')">Modern Tool Usage</a></li>
+                    <li><a onclick="loadContent('computing')">Computing</a></li>
+                    <li><a onclick="loadContent('professionalism')">Professionalism and Ethics</a></li>
+                    <li><a onclick="loadContent('teamwork')">Individual and Teamwork</a></li>
+                    <li><a onclick="loadContent('communication')">Communication</a></li>
+                    <li><a onclick="loadContent('lifelong-learning')">Lifelong Learning</a></li></li>
+                </ul>
               </ul>
             </li>
         </ul>
@@ -360,6 +360,13 @@
             }
         }
     </script>
+                  switch(section) {
+                            case 'knowledge':
+                    content = "<h2>Knowledge for Solving Computer Problems</h2><p>Applying computing fundamentals to solve complex problems.</p>";
+                    break;
+                case 'problem-analysis':
+                    content = "<h2>Problem Analysis</h2><p>Identifying and formulating computational solutions.</p>";
+                    break
 
 </body>
 </html>
