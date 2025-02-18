@@ -354,100 +354,230 @@
     .experience-grid {
         flex-direction: column;
         align-items: center;
-    }
+   
+}
+}
 
-
-.content-section {
-    padding: 30px;
-    background: linear-gradient(135deg, #ff6b6b, #ff8f2f);
+#certifications {
+    text-align: center;
+    padding: 60px 20px;
+    background: #FFE4E1;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#certifications h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* This ensures the items are in a horizontal row and centered */
+.certifications-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.certification-item {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 240, 245, 0.3));
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #FFB6C1;
+}
+
+.certification-item h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.certification-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.certification-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #FF69B4;
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        flex-wrap: wrap;
+    }
+}
+
+#awards {
+    text-align: center;
+    padding: 60px 20px;
+    background: #FFE4E1;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#awards h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.awards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.award-item {
+    background: #FFB6C1;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-}
-
-.certification-item, .award-item, .project-item {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    position: relative;
-}
-
-.certification-item:hover, .award-item:hover, .project-item:hover {
+.award-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.certification-icon, .project-icon {
-    font-size: 2em;
+.award-badge {
+    font-size: 30px;
     margin-bottom: 15px;
-    color: #ff6b6b;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    color: #FF69B4;
 }
 
-.certification-item:hover .certification-icon,
-.project-item:hover .project-icon {
-    color: #ff8f2f;
-    transform: rotate(360deg);
-    transition: transform 1s ease-in-out;
-}
-
-.certification-item h3, .award-item h3, .project-item h3 {
-    font-size: 1.6em;
-    color: #333;
+.award-item h3 {
+    font-size: 22px;
     font-weight: bold;
+    color: #333;
     margin-bottom: 10px;
-    transition: color 0.3s ease;
 }
 
-.certification-item p, .award-item p, .project-item p {
-    font-size: 1.1em;
+.award-item p {
+    font-size: 16px;
     color: #555;
-    margin-bottom: 10px;
+    font-style: italic;
 }
 
-.certification-item:nth-child(odd), .award-item:nth-child(odd), .project-item:nth-child(odd) {
-    background-color: #f8f8f8;
+.award-item:nth-child(odd) {
+    background: linear-gradient(135deg, #FFDEE9 0%, #FFBBEC 100%);
 }
 
-.certification-item:nth-child(even), .award-item:nth-child(even), .project-item:nth-child(even) {
-    background-color: #e8e8e8;
+.award-item:nth-child(even) {
+    background: linear-gradient(135deg, #D4E4FF 0%, #B6CCFF 100%);
 }
 
-.certification-item:hover h3, .award-item:hover h3, .project-item:hover h3 {
-    color: #ff8f2f;
+.award-item:hover .award-badge {
+    animation: rotateBadge 1s infinite;
 }
 
+@keyframes rotateBadge {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+.projects {
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.project-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.project-image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-    .content-section {
-        padding: 20px;
-    }
-    .certification-item, .award-item, .project-item {
-        padding: 15px;
-    }
-    .certification-icon, .project-icon {
-        font-size: 1.5em;
-    }
+  .project {
+    flex-direction: column;
+    align-items: center;
+  }
 
-}
+  .project-image {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .project-content {
+    text-align: center;
+  }
 }
 
     </style>
@@ -521,15 +651,15 @@ h1 {
     <div class="experience-grid">
         <div class="experience-card">
             <div class="experience-img">
-                <img src="https://images.unsplash.com/photo-1593642634345-0f07c66d29f1?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDZ8fGltYWdlfGVufDB8fHx8MTY4MDEzOTM3O3ww&ixlib=rb-4.0.3&q=80&w=1200" alt="HTML Coding">
+                <img src="https://www.markfiniti.com/wp-content/uploads/2023/04/HTML-tags-10.jpg" alt="HTML Coding">
             </div>
             <h3>Learning HTML Coding</h3>
-            <p>Building websites from scratch, I truly embraced the beauty of HTML. The coding challenges made me think creatively.</p>
+            <p>Building websites from scratch, I truly embraced the beauty of HTML. The coding challenges made me think creatively.<br><br></p>
         </div>
 
         <div class="experience-card">
             <div class="experience-img">
-                <img src="https://images.unsplash.com/photo-1573368313209-d02155f540fd?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGV4cGVyaWVuY2V8ZW58MHx8fHwxNjgwMTM4NzYz&ixlib=rb-4.0.3&q=80&w=1200" alt="Ushering">
+                <img src="https://scontent.fmnl15-1.fna.fbcdn.net/v/t39.30808-6/475234973_1048637543949636_4965176833757361946_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=B_cY3sB4OO0Q7kNvgHB8Q6i&_nc_oc=AdgbXEfuhGJ1nnq7pQcLtMEHTS2KGb2N4JZ2pJFOHEy3kQi_m3eb6pXC8QQ1u2031YA&_nc_zt=23&_nc_ht=scontent.fmnl15-1.fna&_nc_gid=A7irax7PqRMNnf6QJrF9nDn&oh=00_AYCy4tnfMtJYR0TZ5kkjgQeyZX-bVIBJSpk4AsFa7EcH1Q&oe=67B9A212" alt="Ushering">
             </div>
             <h3>Ushering at a Seminar</h3>
             <p>From managing registrations to guiding attendees, my role as an usher taught me leadership and teamwork.</p>
@@ -537,7 +667,7 @@ h1 {
 
         <div class="experience-card">
             <div class="experience-img">
-                <img src="https://images.unsplash.com/photo-1563457314-195b8fdf5c9e?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fHByZXNlbnRhdGl2ZXxlbnwwfHx8fDE2ODAxMzkyMTk&ixlib=rb-4.0.3&q=80&w=1200" alt="Fun Experience">
+                <img src="https://scontent.fmnl15-1.fna.fbcdn.net/v/t39.30808-6/470168254_417973328060853_1764373360206684923_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=H3_RswhduiMQ7kNvgHQsRPS&_nc_oc=AdhrZVHidHvqe0GotgixdxJ4-WmrEy1cLfCxrBi8q4F3gsiNYH0umj_Tuanh2Ekiuw4&_nc_zt=23&_nc_ht=scontent.fmnl15-1.fna&_nc_gid=A7OHka4sGQaCzHbsCvtLCQw&oh=00_AYBQkz8Q9cozQoPPvI2zhC-umC3KPor_wK8lNJE4M58ZmQ&oe=67B9A785" alt="Fun Experience">
             </div>
             <h3>Having Fun at the Event</h3>
             <p>Despite the hard work, ushering at the seminar was an unforgettable experience. Meeting new people and gaining insights was a blast!</p>
@@ -547,87 +677,130 @@ h1 {
 
 <div id="certifications" class="content-section">
     <h1>Certifications</h1>
-    <div class="certification-item">
-        <h3>C++ Programming Certification</h3>
-        <p>Certified in C++ Programming – Aug 2021</p>
-    </div>
-    <div class="certification-item">
-        <h3>Java Programming Certification</h3>
-        <p>Certified in Java Programming – Aug 2022</p>
-    </div>
-    <div class="certification-item">
-        <h3>JavaScript Programming Certification</h3>
-        <p>Certified in JavaScript Programming – Aug 2023</p>
-    </div>
-    <div class="certification-item">
-        <h3>Basic Coding with RobotMesh Certification</h3>
-        <p>Certified in Basic Coding with RobotMesh – Aug 2022</p>
+    <div class="certifications-grid">
+        <div class="certification-item">
+            <div class="certification-icon">🎖️</div>
+            <h3>C++ Programming Certification</h3>
+            <p>Certified in C++ Programming – Aug 2021</p>
+        </div>
+        <div class="certification-item">
+            <div class="certification-icon">👩‍💻</div>
+            <h3>Java Programming Certification</h3>
+            <p>Certified in Java Programming – Aug 2022</p>
+        </div>
+        <div class="certification-item">
+            <div class="certification-icon">💻</div>
+            <h3>JavaScript Programming Certification</h3>
+            <p>Certified in JavaScript Programming – Aug 2023</p>
+        </div>
+        <div class="certification-item">
+            <div class="certification-icon">🤖</div>
+            <h3>Basic Coding with RobotMesh Certification</h3>
+            <p>Certified in Basic Coding with RobotMesh – Aug 2022</p>
+        </div>
     </div>
 </div>
 
 <div id="awards" class="content-section">
     <h1>Awards</h1>
-    <div class="award-item">
-        <h3>Top 10 in Math & Science Technology Week Quiz Bee</h3>
-        <p>Oct 2021</p>
-    </div>
-    <div class="award-item">
-        <h3>MHSS Foundation Week 1st Runner Up Cluster</h3>
-        <p>Jan 2023</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 7 with Honors</h3>
-        <p>2019</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 8 with Honors</h3>
-        <p>2020</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 9 with High Honors</h3>
-        <p>2021</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 10 with High Honors</h3>
-        <p>2022</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 11 1st Quarter with Honors</h3>
-        <p>2023</p>
-    </div>
-    <div class="award-item">
-        <h3>Grade 12 2nd Quarter with Honors</h3>
-        <p>2024</p>
+    <div class="awards-container">
+        <div class="award-item">
+            <div class="award-badge">🏆</div>
+            <h3>Top 10 in Math & Science Technology Week Quiz Bee</h3>
+            <p>Oct 2021</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🥇</div>
+            <h3>MHSS Foundation Week 1st Runner Up Cluster</h3>
+            <p>Jan 2023</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🌟</div>
+            <h3>Grade 7 with Honors</h3>
+            <p>2019</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🏅</div>
+            <h3>Grade 8 with Honors</h3>
+            <p>2020</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🎖️</div>
+            <h3>Grade 9 with High Honors</h3>
+            <p>2021</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🥈</div>
+            <h3>Grade 10 with High Honors</h3>
+            <p>2022</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🏆</div>
+            <h3>Grade 11 1st Quarter with Honors</h3>
+            <p>2023</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge">🥇</div>
+            <h3>Grade 12 2nd Quarter with Honors</h3>
+            <p>2024</p>
+        </div>
     </div>
 </div>
 
-<div id="projects" class="content-section">
-    <h1>Projects</h1>
-    <div class="project-item">
-        <h3>Effect on Female MHSS Learners’ Self-Esteem Regarding the Slim-Like Form Beauty Standard</h3>
+  
+<section id="projects" class="content-section">
+  <h2>My Projects</h2>
+
+  <div class="project">
+    <div class="project-content">
+      <h3>Effect on Female MHSS Learners’ Self-Esteem Regarding the Slim-Like Form Beauty Standard</h3>
         <p>Sept 2021 – April 2023</p>
         <p>This research focused on how social media affects the self-esteem of female students in MHSS, particularly concerning the slim-like beauty standard.</p>
     </div>
-    <div class="project-item">
-        <h3>The Effects of Mixed Emotions on Male-Female Friendships of Senior High Students</h3>
+    <div class="project-image">
+      <img src="https://dam.mediacorp.sg/image/upload/s--dtzoMwyD--/f_auto,q_auto/c_fill,g_auto,h_622,w_830/v1/mediacorp/tdy/image/2024/03/01/20240301-sw-bodyimage.jpg?itok=7o-hOcsH" alt="Project 1 Image">
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-content">
+      <h3>The Effects of Mixed Emotions on Male-Female Friendships of Senior High Students at Mapùa University - Makati</h3>
         <p>Jan 2024 – May 2024</p>
         <p>This study explored the complexities of mixed emotions in male-female friendships and how it affects relationships among senior high students.</p>
     </div>
-    <div class="project-item">
-        <h3>Analysis of the Impact of Green Spaces on Environmental Management in Makati</h3>
+    <div class="project-image">
+      <img src="https://www.wikihow.com/images/thumb/a/aa/Be-Nice-to-Your-Siblings-Step-13-Version-2.jpg/-crop-375-300-375px-nowatermark-Be-Nice-to-Your-Siblings-Step-13-Version-2.jpg.webp" alt="Project 2 Image">
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-content">
+      <h3>Analysis of the Impact of Green Spaces on Environmental Management and Community Cohesion in Makat Business District Community</h3>
         <p>Aug 2024 – Present</p>
         <p>This ongoing research evaluates the role of green spaces in environmental management and community cohesion within the Makati Business District.</p>
     </div>
+    <div class="project-image">
+<img src="https://urbact.eu/sites/default/files/styles/article_style_1280/public/images/062619_publicparkart.jpg?itok=lfgWv51R">
+
+    </div>
+  </div>
+
+
+</section>
+
 </div>
 
-    <script>
-        function showSection(sectionId) {
-            let sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => section.classList.remove('active'));
+ <script>
+    function showSection(sectionId) {
+        let sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.remove('active'));
 
-            document.getElementById(sectionId).classList.add('active');
+        let selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.classList.add('active');
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
